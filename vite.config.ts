@@ -6,11 +6,13 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Client-side only build for Vercel static deployment
+// Client-side only build for Vercel static deployment (disable TanStack Start SSR)
 export default defineConfig({
+  tanstackStart: {
+    ssr: false,
+  },
   vite: {
     build: {
-      ssr: false,
       outDir: "dist",
       emptyOutDir: true,
     },
