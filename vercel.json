@@ -3,7 +3,11 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/(.*?(?:\\.(?!html?(?:\\?|$))|(?<!/)$))",
+      "source": "/(?!.*\\.)",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(?!.*\\.(js|css|svg|png|jpg|jpeg|gif|ico|woff|woff2|ttf|eot)$).*",
       "destination": "/index.html"
     }
   ]

@@ -7,4 +7,12 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Client-side only build for Vercel static deployment
-export default defineConfig({});
+export default defineConfig({
+  vite: {
+    build: {
+      ssr: false,
+      outDir: "dist",
+      emptyOutDir: true,
+    },
+  },
+});
